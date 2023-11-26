@@ -2,7 +2,7 @@ up:
 	docker-compose up -d
 init:
 	docker-compose up -d --build
-	# docker-compose exec node npm install
+	docker-compose exec node npm install
 
 node:
 	docker-compose exec node bash
