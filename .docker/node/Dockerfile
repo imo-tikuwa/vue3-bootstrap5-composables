@@ -7,6 +7,7 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=fa
     apt-get -y --no-install-recommends install ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
+    rm -rf /tmp/* && \
     { \
         echo "alias ll='ls -l --color=auto'"; \
     } >> /home/node/.bashrc
