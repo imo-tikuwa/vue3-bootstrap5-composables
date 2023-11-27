@@ -1,6 +1,8 @@
-import './scss/styles.scss'
+import '@/scss/styles.scss'
 
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from '@/App.vue'
 
-createApp(App).mount('#app')
+import { ConfirmModalPlugin } from '@/plugins/confirmModal'
+
+createApp(App).use(ConfirmModalPlugin).mount('#app')
