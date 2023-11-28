@@ -1,6 +1,7 @@
 FROM node:18-slim
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
+ARG WORKDIR_NAME
 ENV TZ=Asia/Tokyo
 
 RUN apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false && \
@@ -12,6 +13,6 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=fa
         echo "alias ll='ls -l --color=auto'"; \
     } >> /home/node/.bashrc
 
-WORKDIR /vue3-bootstrap5-composables
+WORKDIR /${WORKDIR_NAME}
 
 USER node

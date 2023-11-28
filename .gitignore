@@ -27,3 +27,7 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# settings for publish to npmjs
+.npmrc
+.env

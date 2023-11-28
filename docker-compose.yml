@@ -3,8 +3,12 @@ services:
     build:
       context: ./
       dockerfile: ./.docker/node/Dockerfile
+      args:
+        - WORKDIR_NAME=${DEVELOPMENT_PACKAGE_NAME}
     volumes:
-      - .:/vue3-bootstrap5-composables:cached
+      - .:/${DEVELOPMENT_PACKAGE_NAME}:cached
     ports:
       - 5173:5173
     tty: true
+    environment:
+      - NPM_CONFIG_USERCONFIG=/${DEVELOPMENT_PACKAGE_NAME}/.npmrc
