@@ -12,6 +12,6 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=fa
         echo "alias ll='ls -l --color=auto'"; \
     } >> /home/node/.bashrc
 
-WORKDIR /app
+WORKDIR /vue3-bootstrap5-composables
 
 USER node
