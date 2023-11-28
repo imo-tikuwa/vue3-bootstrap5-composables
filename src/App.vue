@@ -18,6 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import DemoChildComponent1 from '@/components/DemoChildComponent1.vue'
-import DemoChildComponent2 from '@/components/DemoChildComponent2.vue'
+import DemoChildComponent1 from './components/DemoChildComponent1.vue'
+import DemoChildComponent2 from './components/DemoChildComponent2.vue'
 </script>

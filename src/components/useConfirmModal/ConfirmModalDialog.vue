@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue'
 import { Modal } from 'bootstrap'
-import type { ConfirmModalShowOptions } from '@/types'
+import type { ConfirmModalShowOptions } from '../../types'
 
 const confirmModalDialogRef = ref()
 let modalObject: Modal

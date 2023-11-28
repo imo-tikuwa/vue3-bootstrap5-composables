@@ -4,8 +4,8 @@
 
 <script setup lang="ts">
 import { inject, onMounted, ref } from 'vue'
-import { ConfirmModalSymbol } from '@/plugins/confirmModal'
-import type { ConfirmModalService } from '@/types'
+import { ConfirmModalSymbol } from '../../plugins/confirmModal'
+import type { ConfirmModalService } from '../../types'
 
 const confirmModalRef = ref<HTMLElement>()
 

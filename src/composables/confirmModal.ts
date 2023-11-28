@@ -1,6 +1,6 @@
 import { inject } from 'vue'
-import { ConfirmModalSymbol } from '@/plugins/confirmModal'
-import type { ConfirmModalService } from '@/types'
+import { ConfirmModalSymbol } from '../plugins/confirmModal'
+import type { ConfirmModalService } from '../types'
 
 /**
  * 確認モーダルを扱うためのコンポーザブル関数

@@ -1,7 +1,7 @@
 import { type App, type Plugin, ref } from 'vue'
-import type { ConfirmModalService } from '@/types'
-import ConfirmModalDialog from '@/components/useConfirmModal/ConfirmModalDialog.vue'
-import ConfirmModalInjection from '@/components/useConfirmModal/ConfirmModalInjection.vue'
+import type { ConfirmModalService } from '../types'
+import ConfirmModalDialog from '../components/useConfirmModal/ConfirmModalDialog.vue'
+import ConfirmModalInjection from '../components/useConfirmModal/ConfirmModalInjection.vue'
 
 /**
  * provide/injectで使用する固有のシンボル

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { useConfirmModal } from '@/composables/confirmModal'
+import { useConfirmModal } from '../composables/confirmModal'
 
 const confirmModal = useConfirmModal()
 
