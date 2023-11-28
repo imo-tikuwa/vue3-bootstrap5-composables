@@ -9,7 +9,7 @@ node:
 npm-dev:
 	docker-compose exec node npm run dev
 npm-build:
-	docker-compose exec node npm run build-only
+	docker-compose exec node npm run build
 
 down:
 	docker-compose down
