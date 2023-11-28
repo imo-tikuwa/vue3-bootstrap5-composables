@@ -48,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/imo-tikuwa/vue3-bootstrap5-composables.git"
+    "url": "git+https://github.com/imo-tikuwa/vue3-bootstrap5-composables.git"
   },
   "homepage": "https://github.com/imo-tikuwa/vue3-bootstrap5-composables"
 }
