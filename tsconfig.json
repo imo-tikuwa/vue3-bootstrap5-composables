@@ -32,6 +32,8 @@
   "include": [
     // vue-tsc  --emitDeclarationOnly実行の際、ビルド対象とするファイル
     "src/**/*.ts",
+    // ↓ d.tsのインクルード設定について意味ないかも？
+    // types/index.d.tsの状態だとvue-tscに無視されてdistフォルダに必要な型定義が不足してた。。
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/components/*.vue"
