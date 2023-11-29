@@ -1,3 +1,4 @@
 registry=https://registry.npmjs.org/
 init-author-name=
 init-author-url=
+//registry.npmjs.org/:_authToken=

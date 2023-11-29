@@ -10,6 +10,8 @@ npm-dev:
 	docker-compose exec node npm run dev
 npm-build:
 	docker-compose exec node npm run build
+npm-publish:
+	docker-compose exec node npm publish --access=public
 
 down:
 	docker-compose down
