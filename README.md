@@ -1,46 +1,72 @@
-# .
+# @imo-tikuwa/vue3-bootstrap5-composables
 
-This template should help get you started developing with Vue 3 in Vite.
+provide composable plugins for environments using vue3 and boostrap5.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+## Installation
+```
+npm install -D @imo-tikuwa/vue3-bootstrap5-composables
 ```
 
-### Compile and Hot-Reload for Development
+## Usage
+### ConfirmModalPlugin
+1. import plugin.
+```diff:main.js
+import { createApp } from 'vue'
+import App from './App.vue'
 
-```sh
-npm run dev
+import { ConfirmModalPlugin } from '@imo-tikuwa/vue3-bootstrap5-composables'
+
+createApp(App).use(ConfirmModalPlugin).mount('#app')
 ```
 
-### Type-Check, Compile and Minify for Production
+2. append ConfirmModalInjection component in root Vue file(App.vue).
+```diff:App.vue
+  <div class="container">
+    <router-view />
 
-```sh
-npm run build
+    <ConfirmModalInjection />
+  </div>
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+3. wrote codes on the page where you want to display the confirmation modal.
+import useConfirmModal composable and call show method.
+```vue
+<script setup lang="ts">
+import { useConfirmModal } from '@imo-tikuwa/vue3-bootstrap5-composables'
 
-```sh
-npm run lint
+const confirmModal = useConfirmModal()
+
+const handleClick1 = () => {
+  confirmModal.show({
+    title: 'Confirm1',
+    content: 'Primary Color Button Clicked.',
+    ok: async () => {
+      console.log('OK Clicked.')
+    }
+  })
+}
+</script>
+```
+
+alternatively, you can call it directly from $confirmModal.show inside the <template> section
+```vue
+<template>
+  <button
+    type="button"
+    class="btn btn-warning"
+    @click="
+      $confirmModal.show({
+        title: 'Confirm3',
+        content: 'Warning Color Button Clicked.',
+        okText: '〇',
+        okClass: 'btn-success w-25',
+        cancelText: '×',
+        cancelClass: 'btn-warning w-25',
+        ok: handleOk
+      })
+    "
+  >
+    show
+  </button>
+</template>
 ```
