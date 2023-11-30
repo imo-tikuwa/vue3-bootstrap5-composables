@@ -48,7 +48,7 @@ const handleClick1 = () => {
 </script>
 ```
 
-alternatively, you can call it directly from $confirmModal.show inside the <template> section
+alternatively, you can call it directly from $confirmModal.show inside the `<template>` section
 ```vue
 <template>
   <button
