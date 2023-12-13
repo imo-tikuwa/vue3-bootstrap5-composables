@@ -9,7 +9,7 @@ import type { ConfirmModalService } from '../../types'
 
 const confirmModalRef = ref<HTMLElement>()
 
-// ContinueModalDialogのrefを渡すためのinject
+// ConfirmModalDialogのrefを渡すためのinject
 const confirmationService = inject<ConfirmModalService>(ConfirmModalSymbol)
 
 onMounted(() => {
