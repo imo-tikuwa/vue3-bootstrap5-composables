@@ -89,7 +89,7 @@ import { reactive, ref } from 'vue'
 import { useToast } from '../composables/toast'
 import { Bootstrap5Themes } from '../types'
 
-const composableToast = useToast()
+const toast = useToast()
 
 interface State {
   toastTitle: string
@@ -108,7 +108,7 @@ const state = reactive<State>({
 })
 
 const showToast = (theme: Bootstrap5Themes, group?: string) => {
-  composableToast.show({
+  toast.show({
     title: state.toastTitle,
     content: state.toastContent,
     delay: state.toastDelay,

@@ -32,7 +32,7 @@ export type Bootstrap5Themes =
 export type ToastMode = 'basic' | 'simple'
 
 export type ComposableToastShowOptions = Partial<{
-  title: Required<string>
+  title: Partial<string>
   content: Required<string>
   delay: Partial<number>
   animation: Partial<boolean>

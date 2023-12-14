@@ -99,7 +99,6 @@ onMounted(() => {
       })
 
       if (!isAnyToastDisplay) {
-        console.log('toast clearing.')
         toasts.value = []
       }
     }
@@ -112,6 +111,11 @@ onBeforeUnmount(() => {
 })
 
 const show = async (options: ComposableToastShowOptions) => {
+  if (options.mode && !['basic', 'simple'].includes(options.mode)) {
+    throw new Error('mode is invalid. Allowed modes are: "basic" or "simple"')
+  }
+  options.mode = options.mode ?? 'basic'
+
   const toastOptions: EnhancedComposableToastShowOptions = {
     ...options,
     elementId: `toast-${Math.random().toString(36).slice(-8)}`,
