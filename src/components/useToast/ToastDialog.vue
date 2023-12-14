@@ -49,7 +49,7 @@ export default {
 }
 </script>
 <script setup lang="ts">
-import { onUpdated, ref, watch } from 'vue'
+import { onBeforeUnmount, onMounted, onUpdated, ref } from 'vue'
 import { Toast } from 'bootstrap'
 import type { ComposableToastShowOptions } from '../../types'
 
@@ -79,13 +79,36 @@ onUpdated(() => {
       delay: option?.delay ?? 5000
     }).show()
 
-    // トーストが消えるときにレンダリングしたHTMLとtoastsのRefからも対象を削除する
+    // トーストが消えるときにレンダリングしたHTMLを削除
     element.addEventListener('hidden.bs.toast', (event: Event) => {
       const toastElement = event.target as HTMLElement
-      toasts.value = toasts.value.filter((toast) => toast.elementId !== toastElement.id)
       toastElement.remove()
     })
   })
+})
+
+// 10秒起きに全てのトーストが非表示かをチェックし非表示のときにtoastsのRefをクリアする
+// ※hidden.bs.toastイベントの中でtoastsのRefを操作すると動作が安定しないための暫定的な措置。より良い案が浮かんだら修正する
+const intervalId = ref<number>()
+onMounted(() => {
+  intervalId.value = window.setInterval(() => {
+    if (toasts.value.length > 0) {
+      const isAnyToastDisplay = toasts.value.some((toast) => {
+        const element = document.getElementById(toast.elementId)
+        return element !== null
+      })
+
+      if (!isAnyToastDisplay) {
+        console.log('toast clearing.')
+        toasts.value = []
+      }
+    }
+  }, 10000)
+})
+onBeforeUnmount(() => {
+  if (intervalId.value) {
+    window.clearInterval(intervalId.value)
+  }
 })
 
 const show = async (options: ComposableToastShowOptions) => {

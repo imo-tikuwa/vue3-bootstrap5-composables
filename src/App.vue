@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header class="mt-4 mb-4 text-center">
-      <h1>Vue3&Bootstrap5 Confirm Modal Example.</h1>
+      <h1>Vue3&Bootstrap5 Composable Example.</h1>
     </header>
 
     <main class="text-center">
@@ -18,7 +18,7 @@
 
     <ConfirmModalInjection />
     <ToastContainer />
-    <ToastContainer position="bottom-right" group="another-toast-container" />
+    <ToastContainer position="bottom-left" group="another-toast-container" />
   </div>
 </template>
 
