@@ -1,3 +1,5 @@
+import ConfirmModalDialog from '../components/useConfirmModal/ConfirmModalDialog.vue'
+
 export type ConfirmModalShowOptions = Partial<{
   title: Required<string>
   content: Required<string>
@@ -11,8 +13,10 @@ export type ConfirmModalShowOptions = Partial<{
 export type ConfirmModalService = {
   show(options: ConfirmModalShowOptions): void
   hide(): void
-  setModalInstance(instance: HTMLElement): void
+  setModalInstance(instance: ConfirmModalDialogType): void
 }
+
+export type ConfirmModalDialogType = InstanceType<typeof ConfirmModalDialog>
 
 // Vueテンプレート内の$confirmModalについて補完を効かせるための設定
 declare module '@vue/runtime-core' {

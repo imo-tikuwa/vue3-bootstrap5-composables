@@ -1,5 +1,5 @@
 import { type App, type Plugin, ref } from 'vue'
-import type { ConfirmModalService } from '../types'
+import type { ConfirmModalDialogType, ConfirmModalService } from '../types'
 import ConfirmModalDialog from '../components/useConfirmModal/ConfirmModalDialog.vue'
 import ConfirmModalInjection from '../components/useConfirmModal/ConfirmModalInjection.vue'
 
@@ -26,7 +26,7 @@ export const ConfirmModalPlugin: Plugin = {
       hide: () => {
         modalInstance.value.hide()
       },
-      setModalInstance: (instance: HTMLElement) => {
+      setModalInstance: (instance: ConfirmModalDialogType) => {
         modalInstance.value = instance
       }
     }
