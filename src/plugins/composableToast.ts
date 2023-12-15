@@ -38,6 +38,9 @@ export const ComposableToastPlugin: Plugin = {
       }
     }
 
+    // コンポーザブル関数の宣言無しにvueテンプレートで使用可能とする設定
+    app.config.globalProperties.$composableToast = service
+
     app.provide(ComposableToastSymbol, service)
   }
 }
