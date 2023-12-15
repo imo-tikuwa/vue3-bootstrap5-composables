@@ -99,7 +99,7 @@ It is possible to install multiple containers. Note that you need to designate a
     <ToastContainer />
 
     <!-- Second ToastContainer with group="another-toast-container" -->
-    <ToastContainer :group="'another-toast-container'" />
+    <ToastContainer :position="'bottom-left'" :group="'another-toast-container'" />
   </div>
 ```
 
@@ -145,8 +145,7 @@ The toast message can also be called directly from $composableToast.show in the 
     class="btn btn-warning"
     @click="
       $composableToast.show({
-        title: 'Simple Toast',
-        content: 'This is Info Toast.',
+        content: 'This is Simple Info Toast.',
         theme: 'info',
         mode: 'simple',
         group: 'another-toast-container'

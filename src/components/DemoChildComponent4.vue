@@ -60,8 +60,7 @@
         class="btn btn-warning me-2"
         @click="
           $composableToast.show({
-            title: 'Simple Toast',
-            content: 'This is Warning Toast.',
+            content: 'This is Simple Warning Toast.',
             theme: 'warning',
             mode: 'simple',
             group: 'another-toast-container'
@@ -75,8 +74,7 @@
         class="btn btn-info me-2"
         @click="
           $composableToast.show({
-            title: 'Simple Toast',
-            content: 'This is Info Toast.',
+            content: 'This is Simple Info Toast.',
             theme: 'info',
             mode: 'simple',
             group: 'another-toast-container'
@@ -90,8 +88,7 @@
         class="btn btn-light me-2"
         @click="
           $composableToast.show({
-            title: 'Simple Toast',
-            content: 'This is Light Toast.',
+            content: 'This is Simple Light Toast.',
             theme: 'light',
             mode: 'simple',
             group: 'another-toast-container'
@@ -105,8 +102,7 @@
         class="btn btn-dark me-2"
         @click="
           $composableToast.show({
-            title: 'Simple Toast',
-            content: 'This is Dark Toast.',
+            content: 'This is Simple Dark Toast.',
             theme: 'dark',
             mode: 'simple',
             group: 'another-toast-container'
