@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header class="mt-4 mb-4 text-center">
-      <h1>Vue3&Bootstrap5 Composable Example.</h1>
+      <h1>Vue3&Bootstrap5 Composable Examples.</h1>
     </header>
 
     <main class="text-center">
@@ -13,6 +13,9 @@
       </div>
       <div class="mt-4">
         <DemoChildComponent3 />
+      </div>
+      <div class="mt-4">
+        <DemoChildComponent4 />
       </div>
     </main>
 
@@ -26,6 +29,7 @@
 import DemoChildComponent1 from './components/DemoChildComponent1.vue'
 import DemoChildComponent2 from './components/DemoChildComponent2.vue'
 import DemoChildComponent3 from './components/DemoChildComponent3.vue'
+import DemoChildComponent4 from './components/DemoChildComponent4.vue'
 import ConfirmModalInjection from './components/useConfirmModal/ConfirmModalInjection.vue'
 import ToastContainer from './components/useToast/ToastContainer.vue'
 </script>

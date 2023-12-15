@@ -48,9 +48,10 @@ export type ComposableToastService = {
 
 export type ToastDialogType = InstanceType<typeof ToastDialog>
 
-// Vueテンプレート内の$confirmModalについて補完を効かせるための設定
+// Vueテンプレート内の$confirmModalおよび$composableToastについて補完を効かせるための設定
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $confirmModal: ConfirmModalService
+    $composableToast: ComposableToastService
   }
 }

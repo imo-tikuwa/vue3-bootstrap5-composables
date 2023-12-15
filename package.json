@@ -1,6 +1,6 @@
 {
   "name": "@imo-tikuwa/vue3-bootstrap5-composables",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Vue3&Bootstrap5 composable plugins.",
   "type": "module",
   "files": [
