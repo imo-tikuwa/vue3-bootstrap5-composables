@@ -98,8 +98,8 @@ It is possible to install multiple containers. Note that you need to designate a
 
     <ToastContainer />
 
-    <!-- Second ToastContainer with group="group2" -->
-    <ToastContainer :group="'group2'" />
+    <!-- Second ToastContainer with group="another-toast-container" -->
+    <ToastContainer :group="'another-toast-container'" />
   </div>
 ```
 
@@ -129,12 +129,34 @@ If you want to display in a group other than the default, specify the 'group' op
 const someFunction = () => {
   toast.show({
     ~~~
-    group: 'group2',
+    group: 'another-toast-container',
   })
 }
 ```
 
 This setup allows for the installation of multiple ToastContainer components with unique group names, enabling separate management of toasts across different groups.
+
+
+The toast message can also be called directly from $composableToast.show in the `<template>` section.
+```vue
+<template>
+  <button
+    type="button"
+    class="btn btn-warning"
+    @click="
+      $composableToast.show({
+        title: 'Simple Toast',
+        content: 'This is Info Toast.',
+        theme: 'info',
+        mode: 'simple',
+        group: 'another-toast-container'
+      })
+    "
+  >
+    show
+  </button>
+</template>
+```
 
 #### ToastContainer Props
 
