@@ -10,6 +10,9 @@
 name: vite build and deploy
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
