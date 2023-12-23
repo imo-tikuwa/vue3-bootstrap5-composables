@@ -7,6 +7,9 @@ provide composable plugins for environments using vue3 and boostrap5.
 npm install -D @imo-tikuwa/vue3-bootstrap5-composables
 ```
 
+## Demo
+https://imo-tikuwa.github.io/vue3-bootstrap5-composables-used-demo/
+
 ## Usage
 ### ConfirmModalPlugin
 1. import plugin.
