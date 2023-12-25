@@ -1,5 +1,5 @@
 # @imo-tikuwa/vue3-bootstrap5-composables
-test
+test2
 provide composable plugins for environments using vue3 and boostrap5.
 
 ## Installation
