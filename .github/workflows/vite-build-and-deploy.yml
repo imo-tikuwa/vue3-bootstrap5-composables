@@ -10,9 +10,6 @@
 name: vite build and deploy
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -36,6 +33,10 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+
+    # 「types: -closed」の設定はPRをクローズしたときにもワークフローが動いてしまうため以下の設定によってマージされたときだけ動作するよう修正
+    if: github.event.pull_request.merged == true
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
